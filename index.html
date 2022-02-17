@@ -29,25 +29,25 @@
                     <div>
                         <h3>Income</h3>
                         <br>
-                        <p>Income: <input type="text"></p>
+                        <p>Income:<input id="income" type="text"></p>
                     </div>
                     <div>
                         <h3>Expenses</h3>
                         <br>
-                        <p>Food: <input type="text"></p>
-                        <p> Rent: <input type="text"></p>
-                        <p>Clothes: <input type="text"></p>
-                        <button type="button" class="btn btn-primary px-5">Calculate</button>
+                        <p>Food: <input id="food" type="text"></p>
+                        <p> Rent: <input id="rent" type="text"></p>
+                        <p>Clothes:<input id="clothes" type="text"></p>
+                        <button id="calculate-btn" type="button" class="btn btn-primary px-5">Calculate</button>
                         <br><br>
-                        <h3>Total Expenses: <span>00</span></h3>
-                        <h3>Balance: <span>00</span></h3>
+                        <h3>Total Expenses: <span id="total-expenses">00 </span></h3>
+                        <h3>Balance: <span id="available-balance"> 00</span></h3>
                     </div>
                     <div class="mt-5">
-                        <p>Rent: <input type="text"> %
-                            <button type="button" class="btn btn-primary px-5">Save</button>
+                        <p>Save: <input id="parcent" type="text"> %
+                            <button id="save-btn" type="button" class="btn btn-primary px-5">Save</button>
                         </p>
-                        <h3>Saving Amount: <span>00</span> </h3>
-                        <h3>Remaining Balance:<span>00</span> </h3>
+                        <h3>Saving Amount: <span id="saving-amount">00</span> </h3>
+                        <h3>Remaining Balance:<span id="remaining-balance">00</span> </h3>
                     </div>
 
                 </div>
@@ -58,6 +58,9 @@
 
         </section>
     </main>
+
+    <!-- script file link-->
+    <script src="./js/money.js"></script>
 </body>
 
 </html>
