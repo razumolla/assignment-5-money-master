@@ -20,34 +20,38 @@
     <main>
         <section class="container">
             <div class=" row">
-                <div class="col-md-6">
+                <div class="col-md-6 ">
                     <div class="">
-                        <img class="img-fluid" src="./pic/money.png" alt="">
+                        <img class="img-fluid image" src="./pic/money.png" alt="">
                     </div>
                 </div>
-                <div class="col-md-5 ms-5  bg-second-sec text-center p-5">
+                <div class="col-md-6    bg-second-sec text-center p-5">
                     <div>
                         <h3>Income</h3>
                         <br>
-                        <p>Income:<input id="income" type="text"></p>
+                        <h5>Income: <input id="income" type="text"></h5>
                     </div>
                     <div>
                         <h3>Expenses</h3>
                         <br>
-                        <p>Food: <input id="food" type="text"></p>
-                        <p> Rent: <input id="rent" type="text"></p>
-                        <p>Clothes:<input id="clothes" type="text"></p>
+                        <h5>&nbsp;&nbsp;&nbsp;&nbsp; Food: <input id="food" type="text"></h5>
+                        <h5> &nbsp;&nbsp; &nbsp;&nbsp;Rent: <input id="rent" type="text"></h5>
+                        <h5>Clothes: <input id="clothes" type="text"></h5>
                         <button id="calculate-btn" type="button" class="btn btn-primary px-5">Calculate</button>
                         <br><br>
                         <h3>Total Expenses: <span id="total-expenses">00 </span></h3>
                         <h3>Balance: <span id="available-balance"> 00</span></h3>
                     </div>
                     <div class="mt-5">
-                        <p>Save: <input id="parcent" type="text"> %
+                        <h5>Save: <input id="parcent" type="text"> %
                             <button id="save-btn" type="button" class="btn btn-primary px-5">Save</button>
-                        </p>
+                        </h5>
                         <h3>Saving Amount: <span id="saving-amount">00</span> </h3>
-                        <h3>Remaining Balance:<span id="remaining-balance">00</span> </h3>
+                        <h3>Remaining Balance: <span id="remaining-balance">00</span> </h3>
+                    </div>
+                    <br>
+                    <div class="wrong-msg-section">
+                        <p id="input-wrong" class="wrong-msg">❌ Your input Not Valid, Please try again</p>
                     </div>
 
                 </div>

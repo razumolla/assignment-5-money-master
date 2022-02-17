@@ -7,3 +7,22 @@ body{
 .bg-second-sec{
     background-color: rgb(236, 234, 234);
 }
+.image{
+    width: 95%;
+}
+
+
+.wrong-msg {
+    color: rgb(243, 237, 237);
+    text-align: center;
+    margin: 0 auto;
+    background: #092cf1;
+    margin-top: 20px;
+    border-radius: 15px;
+    padding: 5px 20px;
+    display: none;
+}
+.wrong-msg-section{
+    width: 50%;
+    margin: 0 auto;
+}

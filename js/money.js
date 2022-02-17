@@ -1,47 +1,68 @@
+function errorMsg() {
+    const inputError = document.getElementById('input-wrong');
+    return inputError;
+}
 function salary() {
     const totalIncomeText = document.getElementById('income');
-    const totalIncome = totalIncomeText.value;
-    return parseFloat(totalIncome);
+    const totalIncomeValue = totalIncomeText.value;
+    if (isNaN(totalIncomeValue) == true) {
+        errorMsg().style.display = 'block';
+    }
+    else {
+        const totalIncome = parseFloat(totalIncomeValue);
+        return totalIncome;
+    }
 }
 function getInput() {
     const foodCostField = document.getElementById('food');
-    const foodCost = foodCostField.value;
+    const foodCostV = foodCostField.value;
+    const foodCost = parseFloat(foodCostV);
     const rentCostField = document.getElementById('rent');
-    const rentCost = rentCostField.value;
+    const rentCostV = rentCostField.value;
+    const rentCost = parseFloat(rentCostV);
     const clothCostField = document.getElementById('clothes');
-    const clothCost = clothCostField.value;
-    const expensesCost = parseFloat(foodCost) + parseFloat(rentCost) + parseFloat(clothCost);
-    // clear input
-    foodCostField.value = '';
-    rentCostField.value = '';
-    clothCostField.value = '';
-    return expensesCost;
+    const clothCostV = clothCostField.value;
+    const clothCost = parseFloat(clothCostV);
+    const expensesCost = foodCost + rentCost + clothCost;
+    if (isNaN(foodCost) || isNaN(rentCost) || isNaN(clothCost)) {
+        errorMsg().style.display = 'block';
+    }
+    else {
+        return expensesCost;
+    }
 }
 // calculate button 
 document.getElementById('calculate-btn').addEventListener('click',
     function () {
-        const totalIncome = salary();
-        const getInputCost = getInput();
-        const expencesBalance = document.getElementById('total-expenses').innerText = getInputCost;
+        const incomeSalary = salary();
+        let getInputCost = getInput();
+        // Expenses cost
+        const expencesBalance = document.getElementById('total-expenses');
+        expencesBalance.innerText = getInputCost;
         // Balance
-        const netBalance = parseFloat(totalIncome) - getInputCost;
+        const netBalance = incomeSalary - getInputCost;
         const balance = document.getElementById('available-balance').innerText = netBalance;
     })
 // save button
 document.getElementById('save-btn').addEventListener('click',
     function () {
-        const totalIncome = salary();
-        const getInputCost = getInput();
+        const incomeSalry = salary();
+        let getInputCost2 = getInput();
 
         const persentage = document.getElementById('parcent').value;
-        const saveMoney = (parseFloat(totalIncome) * (parseFloat(persentage) / 100)).toFixed(2);
+        if (isNaN(persentage) == true) {
+            errorMsg().style.display = 'block';
+        }
+
+        const saveMoney = (incomeSalry * (parseFloat(persentage) / 100)).toFixed(2);
         // saving amount
-        const savingAmountText = document.getElementById('saving-amount').innerText = saveMoney;
+        const savingAmountText = document.getElementById('saving-amount');
+        savingAmountText.innerText = saveMoney;
         // remaining balance 
-        const netBalance = parseFloat(totalIncome) - getInputCost;
+        const netBalance = incomeSalry - getInputCost2;
         const remainingBalance = netBalance - saveMoney;
 
         const balance2 = document.getElementById('remaining-balance');
         balance2.innerText = remainingBalance;
     }
-)
+);
