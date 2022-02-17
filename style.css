@@ -1,0 +1,9 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+body{
+    font-family: 'Roboto', sans-serif;
+}
+/* second section bg-color */
+.bg-second-sec{
+    background-color: rgb(236, 234, 234);
+}
