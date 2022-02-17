@@ -5,7 +5,7 @@ function errorMsg(inputId) {
 function salary() {
     const totalIncomeText = document.getElementById('income');
     const totalIncomeValue = totalIncomeText.value;
-    if (isNaN(totalIncomeValue) == true || (totalIncomeValue < 0)) {
+    if (isNaN(totalIncomeValue) || (totalIncomeValue < 0)) {
         errorMsg('salary-wrong').style.display = 'block';
     }
     else {
@@ -48,7 +48,6 @@ document.getElementById('calculate-btn').addEventListener('click',
             const balance = document.getElementById('available-balance');
             balance.innerText = netBalance;
         }
-
     })
 // save button
 document.getElementById('save-btn').addEventListener('click',
@@ -60,7 +59,6 @@ document.getElementById('save-btn').addEventListener('click',
         if (isNaN(persentage) == true || (persentage < 0)) {
             errorMsg('percent-wrong').style.display = 'block';
         }
-
         const saveMoney = (incomeSalry * (parseFloat(persentage) / 100)).toFixed(2);
         // saving amount
         const savingAmountText = document.getElementById('saving-amount');
@@ -75,6 +73,5 @@ document.getElementById('save-btn').addEventListener('click',
             const balance2 = document.getElementById('remaining-balance');
             balance2.innerText = remainingBalance;
         }
-
     }
 );
